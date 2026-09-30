@@ -1,0 +1,48 @@
+{
+  "cpu": "13th Gen Intel Core i5-1334U (laptop, 8 GB RAM, no GPU)",
+  "models": {
+    "yolov8n.pt": {
+      "pytorch_ms_p50": 86.0,
+      "pytorch_ms_p90": 93.8,
+      "onnx_ms_p50": 134.7,
+      "onnx_ms_p90": 163.8,
+      "max_fps_onnx": 7.4,
+      "onnx_file_MB": 12.9
+    },
+    "yolo11n.pt": {
+      "pytorch_ms_p50": 91.9,
+      "pytorch_ms_p90": 109.5,
+      "onnx_ms_p50": 137.1,
+      "onnx_ms_p90": 171.0,
+      "max_fps_onnx": 7.3,
+      "onnx_file_MB": 10.7
+    },
+    "yolo11s.pt": {
+      "pytorch_ms_p50": 175.5,
+      "pytorch_ms_p90": 205.6,
+      "onnx_ms_p50": 212.6,
+      "onnx_ms_p90": 344.2,
+      "max_fps_onnx": 4.7,
+      "onnx_file_MB": 38.1
+    },
+    "shelf_detector.pt": {
+      "pytorch_ms_p50": 186.5,
+      "pytorch_ms_p90": 211.5,
+      "onnx_ms_p50": 221.2,
+      "onnx_ms_p90": 279.5,
+      "max_fps_onnx": 4.5,
+      "onnx_file_MB": 37.9
+    }
+  },
+  "bandwidth_per_camera_per_day": {
+    "edge_analytics_MB": 1.21,
+    "cloud_video_streaming_MB": 12600.0,
+    "reduction_%": 99.99
+  },
+  "openvino_ms_p50": {
+    "yolo11n.pt": 153.4,
+    "yolo11s.pt": 389.6,
+    "shelf_detector.pt": 352.0
+  },
+  "conclusion": "On this CPU PyTorch is fastest (ONNX Runtime and OpenVINO FP32 were slower). Person detector: yolo11n (92 ms) so three cameras fit on one CPU box at ~3 FPS each; yolo11s (+5.4 AP50) when a box serves 1-2 cameras."
+}

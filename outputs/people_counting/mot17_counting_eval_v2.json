@@ -1,0 +1,362 @@
+{
+  "settings": {
+    "root": "C:/Users/itanm/retail_ai_data/MOT17/train",
+    "seqs": [
+      "MOT17-02-FRCNN",
+      "MOT17-04-FRCNN",
+      "MOT17-09-FRCNN"
+    ],
+    "configs": [
+      "yolo11n.pt:6:640",
+      "yolo11n.pt:6:960",
+      "yolo11s.pt:6:960"
+    ],
+    "margin": 8.0,
+    "tag": "_v2",
+    "process_width": 960,
+    "conf": 0.25
+  },
+  "sequences": {
+    "MOT17-02-FRCNN": {
+      "info": {
+        "name": "MOT17-02-FRCNN",
+        "fps": 30.0,
+        "n": 600,
+        "w": 1920,
+        "h": 1080
+      },
+      "ground_truth_crossings": {
+        "horizontal": {
+          "in": 0,
+          "out": 1
+        },
+        "vertical": {
+          "in": 16,
+          "out": 4
+        }
+      },
+      "runs": {
+        "yolo11n.pt@6fps/640px": {
+          "counts": {
+            "horizontal": {
+              "in": 1,
+              "out": 0
+            },
+            "vertical": {
+              "in": 9,
+              "out": 0
+            }
+          },
+          "count_error": {
+            "horizontal": {
+              "in": 1,
+              "out": -1
+            },
+            "vertical": {
+              "in": -7,
+              "out": -4
+            }
+          },
+          "detection_precision": 0.829,
+          "detection_recall": 0.406,
+          "occupancy_MAE": 7.59,
+          "mean_people_visible": 14.9,
+          "occupancy_accuracy_%": 48.9,
+          "ms_per_frame": 48.8,
+          "frames_processed": 120
+        },
+        "yolo11n.pt@6fps/960px": {
+          "counts": {
+            "horizontal": {
+              "in": 0,
+              "out": 1
+            },
+            "vertical": {
+              "in": 9,
+              "out": 1
+            }
+          },
+          "count_error": {
+            "horizontal": {
+              "in": 0,
+              "out": 0
+            },
+            "vertical": {
+              "in": -7,
+              "out": -3
+            }
+          },
+          "detection_precision": 0.826,
+          "detection_recall": 0.571,
+          "occupancy_MAE": 4.84,
+          "mean_people_visible": 14.9,
+          "occupancy_accuracy_%": 67.4,
+          "ms_per_frame": 136.4,
+          "frames_processed": 120
+        },
+        "yolo11s.pt@6fps/960px": {
+          "counts": {
+            "horizontal": {
+              "in": 1,
+              "out": 1
+            },
+            "vertical": {
+              "in": 10,
+              "out": 1
+            }
+          },
+          "count_error": {
+            "horizontal": {
+              "in": 1,
+              "out": 0
+            },
+            "vertical": {
+              "in": -6,
+              "out": -3
+            }
+          },
+          "detection_precision": 0.771,
+          "detection_recall": 0.603,
+          "occupancy_MAE": 3.52,
+          "mean_people_visible": 14.9,
+          "occupancy_accuracy_%": 76.3,
+          "ms_per_frame": 254.3,
+          "frames_processed": 120
+        }
+      }
+    },
+    "MOT17-04-FRCNN": {
+      "info": {
+        "name": "MOT17-04-FRCNN",
+        "fps": 30.0,
+        "n": 1050,
+        "w": 1920,
+        "h": 1080
+      },
+      "ground_truth_crossings": {
+        "horizontal": {
+          "in": 8,
+          "out": 8
+        },
+        "vertical": {
+          "in": 4,
+          "out": 7
+        }
+      },
+      "runs": {
+        "yolo11n.pt@6fps/640px": {
+          "counts": {
+            "horizontal": {
+              "in": 8,
+              "out": 4
+            },
+            "vertical": {
+              "in": 2,
+              "out": 4
+            }
+          },
+          "count_error": {
+            "horizontal": {
+              "in": 0,
+              "out": -4
+            },
+            "vertical": {
+              "in": -2,
+              "out": -3
+            }
+          },
+          "detection_precision": 0.909,
+          "detection_recall": 0.384,
+          "occupancy_MAE": 19.98,
+          "mean_people_visible": 34.6,
+          "occupancy_accuracy_%": 42.2,
+          "ms_per_frame": 57.0,
+          "frames_processed": 210
+        },
+        "yolo11n.pt@6fps/960px": {
+          "counts": {
+            "horizontal": {
+              "in": 7,
+              "out": 5
+            },
+            "vertical": {
+              "in": 2,
+              "out": 6
+            }
+          },
+          "count_error": {
+            "horizontal": {
+              "in": -1,
+              "out": -3
+            },
+            "vertical": {
+              "in": -2,
+              "out": -1
+            }
+          },
+          "detection_precision": 0.871,
+          "detection_recall": 0.58,
+          "occupancy_MAE": 11.56,
+          "mean_people_visible": 34.6,
+          "occupancy_accuracy_%": 66.6,
+          "ms_per_frame": 106.8,
+          "frames_processed": 210
+        },
+        "yolo11s.pt@6fps/960px": {
+          "counts": {
+            "horizontal": {
+              "in": 7,
+              "out": 5
+            },
+            "vertical": {
+              "in": 2,
+              "out": 6
+            }
+          },
+          "count_error": {
+            "horizontal": {
+              "in": -1,
+              "out": -3
+            },
+            "vertical": {
+              "in": -2,
+              "out": -1
+            }
+          },
+          "detection_precision": 0.888,
+          "detection_recall": 0.554,
+          "occupancy_MAE": 12.98,
+          "mean_people_visible": 34.6,
+          "occupancy_accuracy_%": 62.5,
+          "ms_per_frame": 309.1,
+          "frames_processed": 210
+        }
+      }
+    },
+    "MOT17-09-FRCNN": {
+      "info": {
+        "name": "MOT17-09-FRCNN",
+        "fps": 30.0,
+        "n": 525,
+        "w": 1920,
+        "h": 1080
+      },
+      "ground_truth_crossings": {
+        "horizontal": {
+          "in": 0,
+          "out": 0
+        },
+        "vertical": {
+          "in": 10,
+          "out": 1
+        }
+      },
+      "runs": {
+        "yolo11n.pt@6fps/640px": {
+          "counts": {
+            "horizontal": {
+              "in": 1,
+              "out": 0
+            },
+            "vertical": {
+              "in": 4,
+              "out": 3
+            }
+          },
+          "count_error": {
+            "horizontal": {
+              "in": 1,
+              "out": 0
+            },
+            "vertical": {
+              "in": -6,
+              "out": 2
+            }
+          },
+          "detection_precision": 0.751,
+          "detection_recall": 0.838,
+          "occupancy_MAE": 1.2,
+          "mean_people_visible": 6.9,
+          "occupancy_accuracy_%": 82.6,
+          "ms_per_frame": 68.9,
+          "frames_processed": 105
+        },
+        "yolo11n.pt@6fps/960px": {
+          "counts": {
+            "horizontal": {
+              "in": 1,
+              "out": 0
+            },
+            "vertical": {
+              "in": 6,
+              "out": 3
+            }
+          },
+          "count_error": {
+            "horizontal": {
+              "in": 1,
+              "out": 0
+            },
+            "vertical": {
+              "in": -4,
+              "out": 2
+            }
+          },
+          "detection_precision": 0.705,
+          "detection_recall": 0.882,
+          "occupancy_MAE": 1.85,
+          "mean_people_visible": 6.9,
+          "occupancy_accuracy_%": 73.2,
+          "ms_per_frame": 112.6,
+          "frames_processed": 105
+        },
+        "yolo11s.pt@6fps/960px": {
+          "counts": {
+            "horizontal": {
+              "in": 1,
+              "out": 0
+            },
+            "vertical": {
+              "in": 5,
+              "out": 3
+            }
+          },
+          "count_error": {
+            "horizontal": {
+              "in": 1,
+              "out": 0
+            },
+            "vertical": {
+              "in": -5,
+              "out": 2
+            }
+          },
+          "detection_precision": 0.656,
+          "detection_recall": 0.911,
+          "occupancy_MAE": 2.7,
+          "mean_people_visible": 6.9,
+          "occupancy_accuracy_%": 60.9,
+          "ms_per_frame": 275.3,
+          "frames_processed": 105
+        }
+      }
+    }
+  },
+  "summary": {
+    "yolo11n.pt@6fps/640px": {
+      "true_crossings": 59,
+      "absolute_count_error": 31,
+      "counting_accuracy_%": 47.5
+    },
+    "yolo11n.pt@6fps/960px": {
+      "true_crossings": 59,
+      "absolute_count_error": 24,
+      "counting_accuracy_%": 59.3
+    },
+    "yolo11s.pt@6fps/960px": {
+      "true_crossings": 59,
+      "absolute_count_error": 25,
+      "counting_accuracy_%": 57.6
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "method": "baseline comparison (fixed camera)",
+  "conf": 0.3,
+  "validation_sweep": {
+    "cover0.2_tex0.0": {
+      "min_cover": 0.2,
+      "texture_ratio": 0.0,
+      "void_recall": 0.42,
+      "void_precision": 0.306,
+      "f1": 0.354,
+      "false_voids_per_image": 2.45,
+      "false_voids_no_change": 2.13,
+      "images": 100
+    },
+    "cover0.2_tex0.5": {
+      "min_cover": 0.2,
+      "texture_ratio": 0.5,
+      "void_recall": 0.36,
+      "void_precision": 0.698,
+      "f1": 0.475,
+      "false_voids_per_image": 0.42,
+      "false_voids_no_change": 0.4,
+      "images": 100
+    },
+    "cover0.2_tex0.7": {
+      "min_cover": 0.2,
+      "texture_ratio": 0.7,
+      "void_recall": 0.4,
+      "void_precision": 0.582,
+      "f1": 0.474,
+      "false_voids_per_image": 0.74,
+      "false_voids_no_change": 0.69,
+      "images": 100
+    },
+    "cover0.3_tex0.0": {
+      "min_cover": 0.3,
+      "texture_ratio": 0.0,
+      "void_recall": 0.43,
+      "void_precision": 0.309,
+      "f1": 0.36,
+      "false_voids_per_image": 2.59,
+      "false_voids_no_change": 2.23,
+      "images": 100
+    },
+    "cover0.3_tex0.5": {
+      "min_cover": 0.3,
+      "texture_ratio": 0.5,
+      "void_recall": 0.37,
+      "void_precision": 0.709,
+      "f1": 0.486,
+      "false_voids_per_image": 0.43,
+      "false_voids_no_change": 0.42,
+      "images": 100
+    },
+    "cover0.3_tex0.7": {
+      "min_cover": 0.3,
+      "texture_ratio": 0.7,
+      "void_recall": 0.41,
+      "void_precision": 0.598,
+      "f1": 0.486,
+      "false_voids_per_image": 0.76,
+      "false_voids_no_change": 0.72,
+      "images": 100
+    },
+    "cover0.5_tex0.0": {
+      "min_cover": 0.5,
+      "texture_ratio": 0.0,
+      "void_recall": 0.48,
+      "void_precision": 0.323,
+      "f1": 0.386,
+      "false_voids_per_image": 2.68,
+      "false_voids_no_change": 2.4,
+      "images": 100
+    },
+    "cover0.5_tex0.5": {
+      "min_cover": 0.5,
+      "texture_ratio": 0.5,
+      "void_recall": 0.42,
+      "void_precision": 0.733,
+      "f1": 0.534,
+      "false_voids_per_image": 0.43,
+      "false_voids_no_change": 0.46,
+      "images": 100
+    },
+    "cover0.5_tex0.7": {
+      "min_cover": 0.5,
+      "texture_ratio": 0.7,
+      "void_recall": 0.46,
+      "void_precision": 0.621,
+      "f1": 0.528,
+      "false_voids_per_image": 0.77,
+      "false_voids_no_change": 0.77,
+      "images": 100
+    }
+  },
+  "selected": {
+    "min_cover": 0.5,
+    "texture_ratio": 0.5
+  },
+  "test": {
+    "min_cover": 0.5,
+    "texture_ratio": 0.5,
+    "void_recall": 0.47,
+    "void_precision": 0.65,
+    "f1": 0.545,
+    "false_voids_per_image": 0.75,
+    "false_voids_no_change": 0.51,
+    "images": 100
+  },
+  "test_by_fill_type": {
+    "dark_fill": {
+      "images": 44,
+      "strict_recall": 0.523,
+      "alert_at_right_place": 0.864
+    },
+    "inpaint": {
+      "images": 56,
+      "strict_recall": 0.429,
+      "alert_at_right_place": 0.804
+    },
+    "all": {
+      "images": 100,
+      "strict_recall": 0.47,
+      "alert_at_right_place": 0.83
+    }
+  }
+}

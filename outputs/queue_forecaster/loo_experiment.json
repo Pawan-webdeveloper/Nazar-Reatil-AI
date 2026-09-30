@@ -1,0 +1,17 @@
+{
+  "hypermarket": {
+    "persistence_MAE": 1.218,
+    "absolute_delta_MAE": 3.313,
+    "per_counter_delta_MAE": 1.094
+  },
+  "neighbourhood": {
+    "persistence_MAE": 0.969,
+    "absolute_delta_MAE": 1.164,
+    "per_counter_delta_MAE": 0.898
+  },
+  "supermarket": {
+    "persistence_MAE": 1.139,
+    "absolute_delta_MAE": 1.166,
+    "per_counter_delta_MAE": 1.039
+  }
+}

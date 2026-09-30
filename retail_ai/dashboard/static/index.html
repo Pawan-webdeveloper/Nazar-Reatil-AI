@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RetailSense Store Ops</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.6c2.8.2 5 2.1 5 5.4"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5l9 4.5 9-4.5M12 12v9"/></symbol>
+    <symbol id="i-queue" viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.2"/><circle cx="12" cy="7" r="2.2"/><circle cx="18" cy="7" r="2.2"/><path d="M3 18c0-2.5 1.4-4.5 3-4.5S9 15.5 9 18M9 18c0-2.5 1.4-4.5 3-4.5s3 2 3 4.5M15 18c0-2.5 1.4-4.5 3-4.5s3 2 3 4.5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9"/><path d="M4 9h16v2.5a2.5 2.5 0 0 1-4 0 2.5 2.5 0 0 1-4 0 2.5 2.5 0 0 1-4 0 2.5 2.5 0 0 1-4 0z"/><path d="M5 13v7h14v-7M10 20v-4h4v4"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h11L21 7H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14l-3-3M20 16H6l3 3"/></symbol>
+    <symbol id="i-pie" viewBox="0 0 24 24"><path d="M12 3v9h9a9 9 0 1 1-9-9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 21c-4 0-7-2.7-7-6.5 0-3 2-5 3.5-6.5.3 2 1.5 3 2.5 3 0-3 1-6 4-8 0 4 5 6 5 11.5 0 3.8-3 6.5-8 6.5z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  </defs>
+</svg>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="4" height="10" rx="1.5"/><rect x="10" y="6" width="4" height="15" rx="1.5"/><rect x="17" y="3" width="4" height="18" rx="1.5"/></svg>
+      <div><strong>RetailSense AI</strong><span>Smart Retail Analytics</span></div>
+    </div>
+    <nav class="nav" role="tablist">
+      <button data-tab="overview" class="active"><svg><use href="#i-home"/></svg>Overview</button>
+      <button data-tab="shoppers"><svg><use href="#i-users"/></svg>Shoppers</button>
+      <button data-tab="inventory"><svg><use href="#i-box"/></svg>Inventory</button>
+      <button data-tab="queues"><svg><use href="#i-queue"/></svg>Queues</button>
+      <button data-tab="alerts"><svg><use href="#i-bell"/></svg>Alerts <span id="alertCount" class="badge"></span></button>
+      <button data-tab="reports"><svg><use href="#i-file"/></svg>Reports</button>
+      <button data-tab="stores"><svg><use href="#i-store"/></svg>All stores</button>
+      <button data-tab="live"><svg><use href="#i-cam"/></svg>Live cameras</button>
+    </nav>
+    <div class="sys-card">
+      <span id="sysDot" class="dot"></span>
+      <div><strong id="sysTitle">System online</strong><span id="sysSub">checking...</span></div>
+    </div>
+  </aside>
+
+  <div class="main-col">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button>
+      <div class="top-controls">
+        <label class="ctl"><svg><use href="#i-store"/></svg><span><small>Store</small><select id="storeSel"></select></span></label>
+        <label class="ctl"><svg><use href="#i-cal"/></svg><span><small>Day</small><input type="date" id="daySel"></span></label>
+        <span class="ctl status" id="edgeStatus"><span class="dot"></span><span id="edgeText">edge: -</span></span>
+        <button class="icon-btn" id="themeBtn" title="Toggle dark mode" aria-label="Toggle dark mode"><svg><use href="#i-moon"/></svg></button>
+        <span class="avatar" aria-hidden="true">RS</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1 id="greeting">Hello,</h1>
+          <p id="storeName" class="muted">Here's what's happening at your store</p>
+        </div>
+        <div class="date-card"><svg><use href="#i-cal"/></svg><div><strong id="dateCard">-</strong><span id="dateNote">selected day</span></div></div>
+      </section>
+      <div id="dayBanner" class="banner" hidden></div>
+
+      <section id="tab-overview" class="tab active">
+        <div class="kpis" id="kpiTiles"></div>
+        <div class="grid2">
+          <div class="card">
+            <div class="card-head"><span class="ic c-blue"><svg><use href="#i-trend"/></svg></span><div><h3>Footfall by hour</h3><p class="sub">Entries counted at the entrance line, selected day</p></div></div>
+            <div id="chHourly" class="chart"></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><span class="ic c-blue"><svg><use href="#i-cal"/></svg></span><div><h3>Daily footfall</h3><p class="sub">Total entries per day</p></div>
+              <select class="range" id="dailyRange"><option value="7">Last 7 days</option><option value="14" selected>Last 14 days</option><option value="28">Last 28 days</option></select></div>
+            <div id="chDaily" class="chart"></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><span class="ic c-blue"><svg><use href="#i-grid"/></svg></span><div><h3>Weekly traffic pattern</h3><p class="sub">Average entries per hour, by weekday and hour of day (last 28 days)</p></div></div>
+          <div id="chDow" class="chart tall"></div>
+        </div>
+      </section>
+
+      <section id="tab-shoppers" class="tab">
+        <div class="card"><div class="card-head"><span class="ic c-green"><svg><use href="#i-users"/></svg></span><div><h3>Zone engagement</h3><p class="sub">Dwell time from anonymous tracks; zones with fewer than 3 visits are hidden for privacy</p></div></div><div id="zoneTable"></div></div>
+        <div class="card"><div class="card-head"><span class="ic c-green"><svg><use href="#i-trend"/></svg></span><div><h3>Dwell time by zone</h3><p class="sub">Average seconds per visit</p></div></div><div id="chDwell" class="chart"></div></div>
+        <div class="card"><div class="card-head"><span class="ic c-orange"><svg><use href="#i-fire"/></svg></span><div><h3>Movement heatmaps</h3><p class="sub">Aggregated foot positions; no images of people are stored</p></div></div><div id="heatmaps" class="gallery"></div></div>
+      </section>
+
+      <section id="tab-inventory" class="tab">
+        <div class="kpis" id="invTiles"></div>
+        <div class="card"><div class="card-head"><span class="ic c-teal"><svg><use href="#i-box"/></svg></span><div><h3>Shelf sections</h3><p class="sub">Latest snapshot per shelf camera section. Press "Mark as full" after restocking to calibrate.</p></div></div><div id="shelfTable"></div></div>
+        <div class="card"><div class="card-head"><span class="ic c-teal"><svg><use href="#i-file"/></svg></span><div><h3>Replenishment order</h3><p class="sub">ERP-ready request generated from shelf alerts</p></div></div><pre id="replen" class="code"></pre></div>
+      </section>
+
+      <section id="tab-queues" class="tab">
+        <div class="kpis" id="queueTiles"></div>
+        <div class="card"><div class="card-head"><span class="ic c-orange"><svg><use href="#i-trend"/></svg></span><div><h3>Queue length, last 6 hours</h3><p class="sub">Average people waiting per counter, 5-minute buckets</p></div></div><div id="chQueue" class="chart"></div></div>
+        <div class="card"><div class="card-head"><span class="ic c-orange"><svg><use href="#i-queue"/></svg></span><div><h3>Live counters</h3><p class="sub">Measured from the checkout camera right now</p></div></div><div id="counterTable"></div></div>
+      </section>
+
+      <section id="tab-alerts" class="tab">
+        <div class="card"><div class="card-head"><span class="ic c-red"><svg><use href="#i-bell"/></svg></span><div><h3>Alerts</h3><p class="sub">Stock shortages, queue build-up and staffing advice</p></div>
+          <label class="inline"><input type="checkbox" id="unackOnly"> Only unacknowledged</label></div><div id="alertTable"></div></div>
+      </section>
+
+      <section id="tab-reports" class="tab">
+        <div class="card"><div class="card-head"><span class="ic c-purple"><svg><use href="#i-file"/></svg></span><div><h3>Daily report</h3></div><div class="row"><button id="dlDaily">Download JSON</button><button id="dlDailyCsv">Hourly CSV</button></div></div><div id="dailyReport"></div></div>
+        <div class="card"><div class="card-head"><span class="ic c-purple"><svg><use href="#i-cal"/></svg></span><div><h3>Weekly report</h3></div><div class="row"><button id="dlWeekly">Download JSON</button></div></div><div id="weeklyReport"></div></div>
+      </section>
+
+      <section id="tab-stores" class="tab">
+        <div class="card"><div class="card-head"><span class="ic c-blue"><svg><use href="#i-store"/></svg></span><div><h3>All locations</h3><p class="sub">Stores that synced to this server. Offline stores keep working and sync when the network returns.</p></div></div><div id="storesTable"></div></div>
+      </section>
+
+      <section id="tab-live" class="tab">
+        <div class="card"><div class="card-head"><span class="ic c-blue"><svg><use href="#i-cam"/></svg></span><div><h3>Live cameras</h3><p class="sub">Processed on the edge device and kept in memory only; the frame is blurred and people are pixelated</p></div></div><div id="liveGrid" class="gallery"></div></div>
+      </section>
+    </main>
+  </div>
+</div>
+<div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+<script src="/static/charts.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

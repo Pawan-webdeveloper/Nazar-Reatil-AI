@@ -1,0 +1,311 @@
+{
+  "horizon_min": 15,
+  "features": [
+    "queue_lag0",
+    "queue_lag1",
+    "queue_lag2",
+    "queue_lag5",
+    "queue_lag10",
+    "queue_lag15",
+    "entries_0_5",
+    "entries_5_15",
+    "entries_15_30",
+    "entries_30_45",
+    "arrivals_0_5",
+    "arrivals_5_15",
+    "queue_trend_5",
+    "counters_open",
+    "queue_per_counter",
+    "tod_sin",
+    "tod_cos",
+    "hour",
+    "dow",
+    "is_weekend",
+    "is_holiday"
+  ],
+  "splits": {
+    "validation": {
+      "persistence": {
+        "MAE": 1.387,
+        "RMSE": 3.597,
+        "R2": 0.9789,
+        "congestion": {
+          "precision": 0.869,
+          "recall": 0.846,
+          "f1": 0.857,
+          "events": 2714
+        }
+      },
+      "seasonal_naive": {
+        "MAE": 9.161,
+        "RMSE": 33.499,
+        "R2": -0.8337,
+        "congestion": {
+          "precision": 0.153,
+          "recall": 0.151,
+          "f1": 0.152,
+          "events": 2714
+        }
+      },
+      "moving_avg_15": {
+        "MAE": 1.581,
+        "RMSE": 4.328,
+        "R2": 0.9694,
+        "congestion": {
+          "precision": 0.86,
+          "recall": 0.82,
+          "f1": 0.84,
+          "events": 2714
+        }
+      },
+      "ridge": {
+        "MAE": 1.522,
+        "RMSE": 3.45,
+        "R2": 0.9806,
+        "congestion": {
+          "precision": 0.861,
+          "recall": 0.873,
+          "f1": 0.867,
+          "events": 2714
+        }
+      },
+      "random_forest": {
+        "MAE": 0.987,
+        "RMSE": 2.182,
+        "R2": 0.9922,
+        "congestion": {
+          "precision": 0.915,
+          "recall": 0.87,
+          "f1": 0.892,
+          "events": 2714
+        }
+      },
+      "lightgbm": {
+        "MAE": 0.982,
+        "RMSE": 2.199,
+        "R2": 0.9921,
+        "congestion": {
+          "precision": 0.915,
+          "recall": 0.867,
+          "f1": 0.89,
+          "events": 2714
+        }
+      }
+    },
+    "test": {
+      "persistence": {
+        "MAE": 1.109,
+        "RMSE": 3.324,
+        "R2": 0.9743,
+        "congestion": {
+          "precision": 0.855,
+          "recall": 0.836,
+          "f1": 0.845,
+          "events": 2454
+        }
+      },
+      "seasonal_naive": {
+        "MAE": 4.38,
+        "RMSE": 20.34,
+        "R2": 0.0387,
+        "congestion": {
+          "precision": 0.27,
+          "recall": 0.108,
+          "f1": 0.154,
+          "events": 2454
+        }
+      },
+      "moving_avg_15": {
+        "MAE": 1.259,
+        "RMSE": 4.037,
+        "R2": 0.9621,
+        "congestion": {
+          "precision": 0.844,
+          "recall": 0.817,
+          "f1": 0.83,
+          "events": 2454
+        }
+      },
+      "ridge": {
+        "MAE": 1.236,
+        "RMSE": 2.953,
+        "R2": 0.9797,
+        "congestion": {
+          "precision": 0.849,
+          "recall": 0.882,
+          "f1": 0.865,
+          "events": 2454
+        }
+      },
+      "random_forest": {
+        "MAE": 0.819,
+        "RMSE": 1.987,
+        "R2": 0.9908,
+        "congestion": {
+          "precision": 0.919,
+          "recall": 0.857,
+          "f1": 0.887,
+          "events": 2454
+        }
+      },
+      "lightgbm": {
+        "MAE": 0.814,
+        "RMSE": 1.998,
+        "R2": 0.9907,
+        "congestion": {
+          "precision": 0.918,
+          "recall": 0.854,
+          "f1": 0.885,
+          "events": 2454
+        }
+      }
+    }
+  },
+  "selected_model": "lightgbm",
+  "test_slices_selected_model": {
+    "store_type": {
+      "hypermarket": {
+        "MAE": 0.811,
+        "mean_queue": 6.781,
+        "n": 11550.0,
+        "MAE_per_mean_queue": 0.12
+      },
+      "neighbourhood": {
+        "MAE": 0.797,
+        "mean_queue": 1.958,
+        "n": 11550.0,
+        "MAE_per_mean_queue": 0.407
+      },
+      "supermarket": {
+        "MAE": 0.833,
+        "mean_queue": 3.039,
+        "n": 11550.0,
+        "MAE_per_mean_queue": 0.274
+      }
+    },
+    "hour_band": {
+      "08-11": {
+        "MAE": 0.819,
+        "mean_queue": 1.44,
+        "n": 7560.0,
+        "MAE_per_mean_queue": 0.569
+      },
+      "11-16": {
+        "MAE": 0.593,
+        "mean_queue": 3.773,
+        "n": 12600.0,
+        "MAE_per_mean_queue": 0.157
+      },
+      "16-20": {
+        "MAE": 1.079,
+        "mean_queue": 3.596,
+        "n": 10080.0,
+        "MAE_per_mean_queue": 0.3
+      },
+      "20-22": {
+        "MAE": 0.83,
+        "mean_queue": 9.38,
+        "n": 4410.0,
+        "MAE_per_mean_queue": 0.089
+      }
+    },
+    "is_weekend": {
+      "0": {
+        "MAE": 0.809,
+        "mean_queue": 4.946,
+        "n": 24750.0,
+        "MAE_per_mean_queue": 0.164
+      },
+      "1": {
+        "MAE": 0.826,
+        "mean_queue": 1.375,
+        "n": 9900.0,
+        "MAE_per_mean_queue": 0.601
+      }
+    },
+    "is_holiday": {
+      "0": {
+        "MAE": 0.609,
+        "mean_queue": 0.943,
+        "n": 32175.0,
+        "MAE_per_mean_queue": 0.646
+      },
+      "1": {
+        "MAE": 3.471,
+        "mean_queue": 42.709,
+        "n": 2475.0,
+        "MAE_per_mean_queue": 0.081
+      }
+    }
+  },
+  "unseen_store_format": {
+    "hypermarket": {
+      "MAE": 1.094,
+      "RMSE": 3.637,
+      "R2": 0.9884,
+      "persistence_MAE": 1.218
+    },
+    "neighbourhood": {
+      "MAE": 0.898,
+      "RMSE": 1.852,
+      "R2": 0.8867,
+      "persistence_MAE": 0.969
+    },
+    "supermarket": {
+      "MAE": 1.039,
+      "RMSE": 2.453,
+      "R2": 0.9444,
+      "persistence_MAE": 1.139
+    }
+  },
+  "top_features": [
+    [
+      "tod_sin",
+      4042
+    ],
+    [
+      "tod_cos",
+      3386
+    ],
+    [
+      "entries_5_15",
+      2793
+    ],
+    [
+      "entries_15_30",
+      2655
+    ],
+    [
+      "queue_lag0",
+      2478
+    ],
+    [
+      "entries_30_45",
+      2457
+    ],
+    [
+      "queue_lag15",
+      2387
+    ],
+    [
+      "entries_0_5",
+      2188
+    ],
+    [
+      "dow",
+      2009
+    ],
+    [
+      "queue_lag10",
+      1934
+    ],
+    [
+      "queue_trend_5",
+      1629
+    ],
+    [
+      "arrivals_5_15",
+      1581
+    ]
+  ]
+}

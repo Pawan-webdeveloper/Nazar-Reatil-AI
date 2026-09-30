@@ -1,0 +1,100 @@
+# RetailSense AI - edge node configuration for ONE store.
+# Coordinates are in pixels of the camera frame (after resize to processing width).
+store:
+  store_id: "STORE-BLR-001"
+  name: "Demo Supermarket, Bengaluru"
+  timezone: "Asia/Kolkata"
+  open_hour: 8
+  close_hour: 22
+
+models:
+  person_detector: "models/person_detector.pt"      # YOLO (COCO person class); falls back to yolo11n.pt
+  shelf_detector: "models/shelf_detector.pt"        # trained on SKU-110K by training/train_shelf_detector.py
+  queue_forecaster: "models/queue_forecaster.joblib"
+  device: "cpu"                                     # "cpu", "0" (CUDA), or use .onnx / openvino exports
+  person_conf: 0.25
+  shelf_conf: 0.30                                  # tuned on validation for counting (outputs/shelf_conf_tuning.json)
+  imgsz: 640
+
+privacy:
+  store_frames: false          # never persist raw video frames
+  blur_people_in_previews: true
+  preview_mode: "full"         # blur the whole preview; people are also pixelated
+  id_salt_rotation_hours: 24   # anonymous track ids are re-salted daily -> no cross-day re-identification
+  min_group_size_for_reports: 3  # suppress stats built on fewer than k people (k-anonymity)
+
+cameras:
+  # Demo sources: Intel IoT DevKit sample videos (github.com/intel-iot-devkit/sample-videos).
+  # Replace `source` with an RTSP URL (rtsp://user:pass@ip/stream), a webcam index ("0") or a file.
+  - id: "cam_entrance"
+    role: "entrance"
+    source: "C:/Users/itanm/retail_ai_data/videos/people-detection.mp4"
+    process_width: 768
+    target_fps: 3
+    # foot point crossing this line moving DOWN (towards the camera) = ENTRY, moving up = EXIT
+    count_line: [[0, 250], [768, 250]]
+    entry_direction: "down"
+    count_margin: 8                  # dead band around the line (pixels): stops jitter double counts
+    imgsz: 960                       # entrance counting is most accurate at 960 px (MOT17: 59 % vs 48 % at 640)
+
+  - id: "cam_floor"
+    role: "floor"
+    source: "C:/Users/itanm/retail_ai_data/videos/store-aisle-detection.mp4"
+    process_width: 720
+    target_fps: 3
+    zones:
+      - {name: "left_aisle",    polygon: [[0, 120], [200, 120], [200, 404], [0, 404]]}
+      - {name: "promo_display", polygon: [[200, 150], [470, 150], [470, 404], [200, 404]]}
+      - {name: "right_aisle",   polygon: [[470, 120], [720, 120], [720, 404], [470, 404]]}
+    heatmap_cell: 12
+
+  - id: "cam_checkout"
+    role: "queue"
+    source: "C:/Users/itanm/retail_ai_data/videos/face-demographics-walking-and-pause.mp4"
+    process_width: 768
+    target_fps: 3
+    counters:
+      - name: "counter_1"
+        queue_polygon:   [[0, 200], [768, 200], [768, 400], [0, 400]]   # corridor where customers wait
+        service_polygon: [[0, 400], [768, 400], [768, 433], [0, 433]]   # standing at the billing desk
+
+  - id: "cam_shelf_A"
+    role: "shelf"
+    source: "samples/shelf"          # folder of shelf snapshots, a video, or an RTSP stream
+    snapshot_interval_s: 60
+    shelf_sections:
+      - {name: "aisle_3_shelf", polygon: null, expected_facings: 0, expected_rows: 0, sku_group: "mixed"}
+
+queue:
+  max_queue_per_counter: 4            # alert threshold (people waiting)
+  target_wait_minutes: 5
+  avg_service_minutes: 2.0            # prior; replaced by the measured value once enough data exists
+  forecast_horizon_minutes: 15
+  counters_total: 6
+
+inventory:
+  low_stock_ratio: 0.5                # < 50 % of expected facings -> LOW_STOCK
+  # values tuned on the SKU-110K validation split (outputs/shelf_eval/*.json)
+  out_of_stock_gap_ratio: 2.0         # gap analysis (no baseline yet): gap > 2 x product width
+  texture_ratio: 0.4                  # empty shelf looks flat: edge density < 0.4 x products
+  min_void_area_ratio: 0.01
+  baseline_min_cover: 0.5             # after 'Mark as full': position counts as empty below 50 % coverage
+  baseline_texture_ratio: 0.5
+
+alerts:
+  cooldown_minutes: 10
+  webhook_url: ""                     # optional: store WhatsApp/Slack/ERP webhook
+  notify_levels: ["critical", "warning"]
+
+sync:
+  central_url: ""                     # e.g. https://hq.example.com/api/ingest ; empty = fully offline
+  api_key_env: "RETAIL_SYNC_KEY"
+  batch_size: 500
+  interval_s: 60
+
+storage:
+  db_path: "data/retail_edge.db"
+
+integrations:
+  pos_csv_dir: "data/pos_exports"      # POS drops CSV (timestamp,bill_id,amount,items,counter)
+  inventory_csv: "data_samples/inventory_master.csv"

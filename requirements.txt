@@ -1,0 +1,30 @@
+# Runtime (edge node + dashboard). Tested with Python 3.13 on Windows 11, CPU only.
+# CPU-only PyTorch (small download, no CUDA needed on the edge box):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.3
+torchvision>=0.18
+ultralytics==8.4.165
+lap>=0.5               # ByteTrack association
+opencv-python-headless>=4.9
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.5
+lightgbm>=4.3
+joblib>=1.4
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+PyYAML>=6.0
+requests>=2.32
+python-multipart>=0.0.9
+matplotlib>=3.8
+
+# Training / evaluation / export
+pyarrow>=16            # reading the SKU-110K / COCO parquet shards
+onnx>=1.16
+onnxruntime>=1.18
+onnxslim>=0.1
+
+# Tests
+pytest>=8
+httpx>=0.27

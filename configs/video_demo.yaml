@@ -1,0 +1,163 @@
+# Demo config: real public videos (MOT17 benchmark + Intel IoT sample videos), separate database
+store:
+  store_id: STORE-BLR-001
+  name: Demo Supermarket, Bengaluru
+  timezone: Asia/Kolkata
+  open_hour: 8
+  close_hour: 22
+models:
+  person_detector: models/person_detector.pt
+  shelf_detector: models/shelf_detector.pt
+  queue_forecaster: models/queue_forecaster.joblib
+  device: cpu
+  person_conf: 0.25
+  shelf_conf: 0.3
+  imgsz: 640
+privacy:
+  store_frames: false
+  blur_people_in_previews: true
+  preview_mode: full
+  id_salt_rotation_hours: 24
+  min_group_size_for_reports: 3
+cameras:
+- id: cam_entrance
+  role: entrance
+  source: C:/Users/itanm/retail_ai_data/videos/mot17_09_sidewalk.mp4
+  process_width: 960
+  target_fps: 6
+  imgsz: 960
+  count_line:
+  - - 480
+    - 0
+  - - 480
+    - 540
+  entry_direction: right
+  count_margin: 8
+- id: cam_floor
+  role: floor
+  source: C:/Users/itanm/retail_ai_data/videos/store-aisle-detection.mp4
+  process_width: 720
+  target_fps: 3
+  zones:
+  - name: left_aisle
+    polygon:
+    - - 0
+      - 120
+    - - 200
+      - 120
+    - - 200
+      - 404
+    - - 0
+      - 404
+  - name: promo_display
+    polygon:
+    - - 200
+      - 150
+    - - 470
+      - 150
+    - - 470
+      - 404
+    - - 200
+      - 404
+  - name: right_aisle
+    polygon:
+    - - 470
+      - 120
+    - - 720
+      - 120
+    - - 720
+      - 404
+    - - 470
+      - 404
+  heatmap_cell: 12
+- id: cam_checkout
+  role: queue
+  source: C:/Users/itanm/retail_ai_data/videos/face-demographics-walking-and-pause.mp4
+  process_width: 768
+  target_fps: 3
+  counters:
+  - name: counter_1
+    queue_polygon:
+    - - 0
+      - 200
+    - - 768
+      - 200
+    - - 768
+      - 400
+    - - 0
+      - 400
+    service_polygon:
+    - - 0
+      - 400
+    - - 768
+      - 400
+    - - 768
+      - 433
+    - - 0
+      - 433
+- id: cam_shelf_A
+  role: shelf
+  source: samples/shelf
+  snapshot_interval_s: 15
+  shelf_sections:
+  - name: aisle_3_shelf
+    polygon: null
+    expected_facings: 0
+    expected_rows: 0
+    sku_group: mixed
+- id: cam_plaza
+  role: floor
+  source: C:/Users/itanm/retail_ai_data/videos/mot17_04_plaza.mp4
+  process_width: 960
+  target_fps: 2
+  zones:
+  - name: upper_walkway
+    polygon:
+    - - 0
+      - 120
+    - - 960
+      - 120
+    - - 960
+      - 300
+    - - 0
+      - 300
+  - name: lower_walkway
+    polygon:
+    - - 0
+      - 300
+    - - 960
+      - 300
+    - - 960
+      - 540
+    - - 0
+      - 540
+  heatmap_cell: 16
+queue:
+  max_queue_per_counter: 4
+  target_wait_minutes: 5
+  avg_service_minutes: 2.0
+  forecast_horizon_minutes: 15
+  counters_total: 6
+inventory:
+  low_stock_ratio: 0.5
+  out_of_stock_gap_ratio: 2.0
+  texture_ratio: 0.4
+  min_void_area_ratio: 0.01
+  baseline_min_cover: 0.5
+  baseline_texture_ratio: 0.5
+alerts:
+  cooldown_minutes: 10
+  webhook_url: ''
+  notify_levels:
+  - critical
+  - warning
+sync:
+  central_url: ''
+  api_key_env: RETAIL_SYNC_KEY
+  batch_size: 500
+  interval_s: 60
+storage:
+  db_path: data/video_demo_run.db
+integrations:
+  pos_csv_dir: data/pos_exports
+  inventory_csv: data_samples/inventory_master.csv

@@ -1,0 +1,278 @@
+3) void (out-of-stock) detection: tune on VAL, report on TEST ...
+val sweep: {
+ "gap1.0_tex0.4": {
+  "gap_ratio": 1.0,
+  "texture_ratio": 0.4,
+  "void_recall": 0.31,
+  "void_precision_lower_bound": 0.184,
+  "f1": 0.231,
+  "voids_per_unmodified_image": 2.9,
+  "images": 100
+ },
+ "gap1.0_tex0.6": {
+  "gap_ratio": 1.0,
+  "texture_ratio": 0.6,
+  "void_recall": 0.43,
+  "void_precision_lower_bound": 0.16,
+  "f1": 0.233,
+  "voids_per_unmodified_image": 4.85,
+  "images": 100
+ },
+ "gap1.0_tex0.8": {
+  "gap_ratio": 1.0,
+  "texture_ratio": 0.8,
+  "void_recall": 0.49,
+  "void_precision_lower_bound": 0.143,
+  "f1": 0.221,
+  "voids_per_unmodified_image": 6.59,
+  "images": 100
+ },
+ "gap1.0_tex99.0": {
+  "gap_ratio": 1.0,
+  "texture_ratio": 99.0,
+  "void_recall": 0.49,
+  "void_precision_lower_bound": 0.117,
+  "f1": 0.189,
+  "voids_per_unmodified_image": 8.94,
+  "images": 100
+ },
+ "gap1.5_tex0.4": {
+  "gap_ratio": 1.5,
+  "texture_ratio": 0.4,
+  "void_recall": 0.29,
+  "void_precision_lower_bound": 0.232,
+  "f1": 0.258,
+  "voids_per_unmodified_image": 1.74,
+  "images": 100
+ },
+ "gap1.5_tex0.6": {
+  "gap_ratio": 1.5,
+  "texture_ratio": 0.6,
+  "void_recall": 0.4,
+  "void_precision_lower_bound": 0.194,
+  "f1": 0.261,
+  "voids_per_unmodified_image": 3.12,
+  "images": 100
+ },
+ "gap1.5_tex0.8": {
+  "gap_ratio": 1.5,
+  "texture_ratio": 0.8,
+  "void_recall": 0.43,
+  "void_precision_lower_bound": 0.165,
+  "f1": 0.238,
+  "voids_per_unmodified_image": 4.44,
+  "images": 100
+ },
+ "gap1.5_tex99.0": {
+  "gap_ratio": 1.5,
+  "texture_ratio": 99.0,
+  "void_recall": 0.43,
+  "void_precision_lower_bound": 0.134,
+  "f1": 0.205,
+  "voids_per_unmodified_image": 6.09,
+  "images": 100
+ },
+ "gap2.0_tex0.4": {
+  "gap_ratio": 2.0,
+  "texture_ratio": 0.4,
+  "void_recall": 0.27,
+  "void_precision_lower_bound": 0.263,
+  "f1": 0.267,
+  "voids_per_unmodified_image": 1.25,
+  "images": 100
+ },
+ "gap2.0_tex0.6": {
+  "gap_ratio": 2.0,
+  "texture_ratio": 0.6,
+  "void_recall": 0.37,
+  "void_precision_lower_bound": 0.209,
+  "f1": 0.267,
+  "voids_per_unmodified_image": 2.4,
+  "images": 100
+ },
+ "gap2.0_tex0.8": {
+  "gap_ratio": 2.0,
+  "texture_ratio": 0.8,
+  "void_recall": 0.4,
+  "void_precision_lower_bound": 0.173,
+  "f1": 0.242,
+  "voids_per_unmodified_image": 3.5,
+  "images": 100
+ },
+ "gap2.0_tex99.0": {
+  "gap_ratio": 2.0,
+  "texture_ratio": 99.0,
+  "void_recall": 0.4,
+  "void_precision_lower_bound": 0.141,
+  "f1": 0.209,
+  "voids_per_unmodified_image": 4.83,
+  "images": 100
+ }
+} 
+selected (gap, texture): (2.0, 0.4) 
+test: {"gap2.0_tex0.4": {"gap_ratio": 2.0, "texture_ratio": 0.4, "void_recall": 0.32, "void_precision_lower_bound": 0.209, "f1": 0.253, "voids_per_unmodified_image": 1.59, "images": 100}}
+{
+  "weights": "models/shelf_detector.pt",
+  "conf": 0.3,
+  "detection_test": {
+    "mAP50": 0.9228,
+    "mAP50_95": 0.5697,
+    "precision": 0.9072,
+    "recall": 0.8525
+  },
+  "counting_test": {
+    "images": 420,
+    "count_MAE": 15.59,
+    "count_accuracy_%": 89.04,
+    "within_10pct_%": 67.9
+  },
+  "robustness_slices": {
+    "dark (<90)": {
+      "images": 8,
+      "count_accuracy_%": 93.17
+    },
+    "normal (90-160)": {
+      "images": 411,
+      "count_accuracy_%": 89.1
+    },
+    "bright (>=160)": {
+      "images": 1,
+      "count_accuracy_%": 29.37
+    },
+    "sparse (<100 items)": {
+      "images": 18,
+      "count_accuracy_%": 63.25
+    },
+    "medium (100-199)": {
+      "images": 370,
+      "count_accuracy_%": 90.58
+    },
+    "dense (>=200)": {
+      "images": 32,
+      "count_accuracy_%": 85.67
+    }
+  },
+  "void_detection": {
+    "validation_sweep": {
+      "gap1.0_tex0.4": {
+        "gap_ratio": 1.0,
+        "texture_ratio": 0.4,
+        "void_recall": 0.31,
+        "void_precision_lower_bound": 0.184,
+        "f1": 0.231,
+        "voids_per_unmodified_image": 2.9,
+        "images": 100
+      },
+      "gap1.0_tex0.6": {
+        "gap_ratio": 1.0,
+        "texture_ratio": 0.6,
+        "void_recall": 0.43,
+        "void_precision_lower_bound": 0.16,
+        "f1": 0.233,
+        "voids_per_unmodified_image": 4.85,
+        "images": 100
+      },
+      "gap1.0_tex0.8": {
+        "gap_ratio": 1.0,
+        "texture_ratio": 0.8,
+        "void_recall": 0.49,
+        "void_precision_lower_bound": 0.143,
+        "f1": 0.221,
+        "voids_per_unmodified_image": 6.59,
+        "images": 100
+      },
+      "gap1.0_tex99.0": {
+        "gap_ratio": 1.0,
+        "texture_ratio": 99.0,
+        "void_recall": 0.49,
+        "void_precision_lower_bound": 0.117,
+        "f1": 0.189,
+        "voids_per_unmodified_image": 8.94,
+        "images": 100
+      },
+      "gap1.5_tex0.4": {
+        "gap_ratio": 1.5,
+        "texture_ratio": 0.4,
+        "void_recall": 0.29,
+        "void_precision_lower_bound": 0.232,
+        "f1": 0.258,
+        "voids_per_unmodified_image": 1.74,
+        "images": 100
+      },
+      "gap1.5_tex0.6": {
+        "gap_ratio": 1.5,
+        "texture_ratio": 0.6,
+        "void_recall": 0.4,
+        "void_precision_lower_bound": 0.194,
+        "f1": 0.261,
+        "voids_per_unmodified_image": 3.12,
+        "images": 100
+      },
+      "gap1.5_tex0.8": {
+        "gap_ratio": 1.5,
+        "texture_ratio": 0.8,
+        "void_recall": 0.43,
+        "void_precision_lower_bound": 0.165,
+        "f1": 0.238,
+        "voids_per_unmodified_image": 4.44,
+        "images": 100
+      },
+      "gap1.5_tex99.0": {
+        "gap_ratio": 1.5,
+        "texture_ratio": 99.0,
+        "void_recall": 0.43,
+        "void_precision_lower_bound": 0.134,
+        "f1": 0.205,
+        "voids_per_unmodified_image": 6.09,
+        "images": 100
+      },
+      "gap2.0_tex0.4": {
+        "gap_ratio": 2.0,
+        "texture_ratio": 0.4,
+        "void_recall": 0.27,
+        "void_precision_lower_bound": 0.263,
+        "f1": 0.267,
+        "voids_per_unmodified_image": 1.25,
+        "images": 100
+      },
+      "gap2.0_tex0.6": {
+        "gap_ratio": 2.0,
+        "texture_ratio": 0.6,
+        "void_recall": 0.37,
+        "void_precision_lower_bound": 0.209,
+        "f1": 0.267,
+        "voids_per_unmodified_image": 2.4,
+        "images": 100
+      },
+      "gap2.0_tex0.8": {
+        "gap_ratio": 2.0,
+        "texture_ratio": 0.8,
+        "void_recall": 0.4,
+        "void_precision_lower_bound": 0.173,
+        "f1": 0.242,
+        "voids_per_unmodified_image": 3.5,
+        "images": 100
+      },
+      "gap2.0_tex99.0": {
+        "gap_ratio": 2.0,
+        "texture_ratio": 99.0,
+        "void_recall": 0.4,
+        "void_precision_lower_bound": 0.141,
+        "f1": 0.209,
+        "voids_per_unmodified_image": 4.83,
+        "images": 100
+      }
+    },
+    "selected_gap_ratio": 2.0,
+    "selected_texture_ratio": 0.4,
+    "test": {
+      "gap_ratio": 2.0,
+      "texture_ratio": 0.4,
+      "void_recall": 0.32,
+      "void_precision_lower_bound": 0.209,
+      "f1": 0.253,
+      "voids_per_unmodified_image": 1.59,
+      "images": 100
+    }
+  }
+}

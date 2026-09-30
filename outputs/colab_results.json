@@ -1,0 +1,22 @@
+{
+  "source": "Colab T4 run of RetailSense_inventory_colab.ipynb (pasted by user 2026-09-30)",
+  "screening_val": {
+    "yolov8n.pt": {"mAP50": 0.8678, "mAP50_95": 0.5079, "precision": 0.8677, "recall": 0.7992, "gpu_ms_per_img": 3.46, "params_M": 3.01},
+    "yolo11n.pt": {"mAP50": 0.8629, "mAP50_95": 0.503, "precision": 0.8669, "recall": 0.7922, "gpu_ms_per_img": 3.31, "params_M": 2.59},
+    "yolo11s.pt": {"mAP50": 0.8965, "mAP50_95": 0.5452, "precision": 0.8929, "recall": 0.8351, "gpu_ms_per_img": 7.75, "params_M": 9.43}
+  },
+  "winner": "yolo11s.pt",
+  "final_val_best": {"mAP50": 0.928, "mAP50_95": 0.578, "precision": 0.913, "recall": 0.869},
+  "test": {"mAP50": 0.9297, "mAP50_95": 0.5833, "precision": 0.9139, "recall": 0.869},
+  "count": {"images": 2935, "count_MAE": 14.28, "count_accuracy_%": 89.07, "within_10pct_%": 69.5},
+  "slices": {
+    "dark (<90)": {"images": 64, "count_accuracy_%": 86.66},
+    "normal (90-160)": {"images": 2865, "count_accuracy_%": 89.2},
+    "bright (>=160)": {"images": 6, "count_accuracy_%": 55.48},
+    "sparse (<100 items)": {"images": 110, "count_accuracy_%": 41.82},
+    "medium (100-199)": {"images": 2576, "count_accuracy_%": 90.9},
+    "dense (>=200)": {"images": 249, "count_accuracy_%": 91.09}
+  },
+  "final_epochs_run": 50,
+  "imgsz": 640
+}

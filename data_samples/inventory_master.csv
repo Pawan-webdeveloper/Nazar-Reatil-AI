@@ -1,0 +1,8 @@
+section,sku_group,supplier,reorder_qty,erp_code
+aisle_3_shelf,mixed,Metro Distributors,48,ERP-A3-MIX
+shampoo,personal_care,HUL Distributor Bengaluru,24,ERP-PC-SHMP
+biscuits,snacks,Britannia CFA,60,ERP-SN-BISC
+detergent,home_care,P&G Distributor,30,ERP-HC-DET
+snacks,snacks,Local Snacks Co,72,ERP-SN-NAMK
+dairy_chiller,dairy,Nandini Dairy,40,ERP-DA-MILK
+rice_atta,staples,Aashirvaad CFA,20,ERP-ST-ATTA

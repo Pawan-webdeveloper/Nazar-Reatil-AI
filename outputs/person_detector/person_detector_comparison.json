@@ -1,0 +1,137 @@
+{
+  "dataset": "COCO val2017 subset: 600 images with people + 150 without",
+  "conf": 0.35,
+  "imgsz": 640,
+  "results": {
+    "yolov8n.pt": {
+      "AP50": 0.7302,
+      "AP50_95": 0.5012,
+      "cpu_latency_ms": 3078.9,
+      "slices": {
+        "all": {
+          "recall": 0.593,
+          "persons": 2482
+        },
+        "small(<32px)": {
+          "recall": 0.237,
+          "persons": 720
+        },
+        "medium": {
+          "recall": 0.621,
+          "persons": 875
+        },
+        "large(>96px)": {
+          "recall": 0.855,
+          "persons": 887
+        },
+        "crowd(>=5)": {
+          "recall": 0.516,
+          "persons": 1760
+        },
+        "sparse(<5)": {
+          "recall": 0.781,
+          "persons": 722
+        },
+        "dark(<80)": {
+          "recall": 0.624,
+          "persons": 396
+        },
+        "normal_light": {
+          "recall": 0.587,
+          "persons": 2086
+        },
+        "precision_at_conf": 0.841,
+        "false_alarm_rate_on_empty_images": 0.013
+      },
+      "eval_minutes": 29.5
+    },
+    "yolo11n.pt": {
+      "AP50": 0.7354,
+      "AP50_95": 0.5084,
+      "cpu_latency_ms": 541.7,
+      "slices": {
+        "all": {
+          "recall": 0.586,
+          "persons": 2482
+        },
+        "small(<32px)": {
+          "recall": 0.244,
+          "persons": 720
+        },
+        "medium": {
+          "recall": 0.602,
+          "persons": 875
+        },
+        "large(>96px)": {
+          "recall": 0.847,
+          "persons": 887
+        },
+        "crowd(>=5)": {
+          "recall": 0.503,
+          "persons": 1760
+        },
+        "sparse(<5)": {
+          "recall": 0.788,
+          "persons": 722
+        },
+        "dark(<80)": {
+          "recall": 0.611,
+          "persons": 396
+        },
+        "normal_light": {
+          "recall": 0.581,
+          "persons": 2086
+        },
+        "precision_at_conf": 0.848,
+        "false_alarm_rate_on_empty_images": 0.007
+      },
+      "eval_minutes": 14.0
+    },
+    "yolo11s.pt": {
+      "AP50": 0.7894,
+      "AP50_95": 0.5699,
+      "cpu_latency_ms": 1847.2,
+      "slices": {
+        "all": {
+          "recall": 0.652,
+          "persons": 2482
+        },
+        "small(<32px)": {
+          "recall": 0.336,
+          "persons": 720
+        },
+        "medium": {
+          "recall": 0.685,
+          "persons": 875
+        },
+        "large(>96px)": {
+          "recall": 0.876,
+          "persons": 887
+        },
+        "crowd(>=5)": {
+          "recall": 0.576,
+          "persons": 1760
+        },
+        "sparse(<5)": {
+          "recall": 0.838,
+          "persons": 722
+        },
+        "dark(<80)": {
+          "recall": 0.652,
+          "persons": 396
+        },
+        "normal_light": {
+          "recall": 0.652,
+          "persons": 2086
+        },
+        "precision_at_conf": 0.866,
+        "false_alarm_rate_on_empty_images": 0.007
+      },
+      "eval_minutes": 27.6
+    }
+  },
+  "selected": "yolo11s.pt",
+  "rule": "highest person AP50-95 with CPU latency <= 120 ms (10 FPS budget)",
+  "deployed": "yolo11n.pt",
+  "deployment_reason": "Accuracy winner is yolo11s (AP50 0.789 vs 0.735), but on the edge CPU it takes 176 ms vs 92 ms per frame. yolo11n keeps 3 cameras per box at ~3 FPS each. Switch models.person_detector to yolo11s.pt for boxes with 1-2 cameras."
+}

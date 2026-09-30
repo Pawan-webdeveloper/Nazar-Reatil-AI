@@ -1,0 +1,165 @@
+{
+  "weights": "models/shelf_detector.pt",
+  "conf": 0.3,
+  "detection_test": {
+    "mAP50": 0.9228,
+    "mAP50_95": 0.5697,
+    "precision": 0.9072,
+    "recall": 0.8525
+  },
+  "counting_test": {
+    "images": 420,
+    "count_MAE": 15.59,
+    "count_accuracy_%": 89.04,
+    "within_10pct_%": 67.9
+  },
+  "robustness_slices": {
+    "dark (<90)": {
+      "images": 8,
+      "count_accuracy_%": 93.17
+    },
+    "normal (90-160)": {
+      "images": 411,
+      "count_accuracy_%": 89.1
+    },
+    "bright (>=160)": {
+      "images": 1,
+      "count_accuracy_%": 29.37
+    },
+    "sparse (<100 items)": {
+      "images": 18,
+      "count_accuracy_%": 63.25
+    },
+    "medium (100-199)": {
+      "images": 370,
+      "count_accuracy_%": 90.58
+    },
+    "dense (>=200)": {
+      "images": 32,
+      "count_accuracy_%": 85.67
+    }
+  },
+  "void_detection": {
+    "validation_sweep": {
+      "gap1.0_tex0.4": {
+        "gap_ratio": 1.0,
+        "texture_ratio": 0.4,
+        "void_recall": 0.31,
+        "void_precision_lower_bound": 0.184,
+        "f1": 0.231,
+        "voids_per_unmodified_image": 2.95,
+        "images": 100
+      },
+      "gap1.0_tex0.6": {
+        "gap_ratio": 1.0,
+        "texture_ratio": 0.6,
+        "void_recall": 0.43,
+        "void_precision_lower_bound": 0.159,
+        "f1": 0.233,
+        "voids_per_unmodified_image": 4.91,
+        "images": 100
+      },
+      "gap1.0_tex0.8": {
+        "gap_ratio": 1.0,
+        "texture_ratio": 0.8,
+        "void_recall": 0.49,
+        "void_precision_lower_bound": 0.143,
+        "f1": 0.221,
+        "voids_per_unmodified_image": 6.67,
+        "images": 100
+      },
+      "gap1.0_tex99.0": {
+        "gap_ratio": 1.0,
+        "texture_ratio": 99.0,
+        "void_recall": 0.49,
+        "void_precision_lower_bound": 0.115,
+        "f1": 0.186,
+        "voids_per_unmodified_image": 9.17,
+        "images": 100
+      },
+      "gap1.5_tex0.4": {
+        "gap_ratio": 1.5,
+        "texture_ratio": 0.4,
+        "void_recall": 0.29,
+        "void_precision_lower_bound": 0.23,
+        "f1": 0.257,
+        "voids_per_unmodified_image": 1.79,
+        "images": 100
+      },
+      "gap1.5_tex0.6": {
+        "gap_ratio": 1.5,
+        "texture_ratio": 0.6,
+        "void_recall": 0.4,
+        "void_precision_lower_bound": 0.193,
+        "f1": 0.26,
+        "voids_per_unmodified_image": 3.19,
+        "images": 100
+      },
+      "gap1.5_tex0.8": {
+        "gap_ratio": 1.5,
+        "texture_ratio": 0.8,
+        "void_recall": 0.43,
+        "void_precision_lower_bound": 0.164,
+        "f1": 0.237,
+        "voids_per_unmodified_image": 4.53,
+        "images": 100
+      },
+      "gap1.5_tex99.0": {
+        "gap_ratio": 1.5,
+        "texture_ratio": 99.0,
+        "void_recall": 0.43,
+        "void_precision_lower_bound": 0.132,
+        "f1": 0.201,
+        "voids_per_unmodified_image": 6.3,
+        "images": 100
+      },
+      "gap2.0_tex0.4": {
+        "gap_ratio": 2.0,
+        "texture_ratio": 0.4,
+        "void_recall": 0.27,
+        "void_precision_lower_bound": 0.26,
+        "f1": 0.265,
+        "voids_per_unmodified_image": 1.3,
+        "images": 100
+      },
+      "gap2.0_tex0.6": {
+        "gap_ratio": 2.0,
+        "texture_ratio": 0.6,
+        "void_recall": 0.37,
+        "void_precision_lower_bound": 0.207,
+        "f1": 0.266,
+        "voids_per_unmodified_image": 2.47,
+        "images": 100
+      },
+      "gap2.0_tex0.8": {
+        "gap_ratio": 2.0,
+        "texture_ratio": 0.8,
+        "void_recall": 0.4,
+        "void_precision_lower_bound": 0.172,
+        "f1": 0.241,
+        "voids_per_unmodified_image": 3.58,
+        "images": 100
+      },
+      "gap2.0_tex99.0": {
+        "gap_ratio": 2.0,
+        "texture_ratio": 99.0,
+        "void_recall": 0.4,
+        "void_precision_lower_bound": 0.138,
+        "f1": 0.205,
+        "voids_per_unmodified_image": 5.01,
+        "images": 100
+      }
+    },
+    "selected_gap_ratio": 2.0,
+    "selected_texture_ratio": 0.6,
+    "test": {
+      "gap_ratio": 2.0,
+      "texture_ratio": 0.6,
+      "void_recall": 0.41,
+      "void_precision_lower_bound": 0.172,
+      "f1": 0.242,
+      "voids_per_unmodified_image": 3.1,
+      "images": 100
+    }
+  }
+}

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/
+hq_data/
+outputs/smoke/
+outputs/training/*/weights/last.pt
+*.cache
+.pytest_cache/

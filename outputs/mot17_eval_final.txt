@@ -1,0 +1,53 @@
+MOT17-02-FRCNN ground truth crossings: {'horizontal': {'in': 0, 'out': 1}, 'vertical': {'in': 16, 'out': 4}}
+  yolo11n.pt@6fps/640px: counts {'horizontal': {'in': 1, 'out': 0}, 'vertical': {'in': 9, 'out': 0}} | err {'horizontal': {'in': 1, 'out': -1}, 'vertical': {'in': -7, 'out': -4}} | {'detection_precision': 0.829, 'detection_recall': 0.406, 'occupancy_MAE': 7.59, 'mean_people_visible': 14.9, 'occupancy_accuracy_%': 48.9, 'ms_per_frame': 69.1, 'frames_processed': 120}
+  yolo11n.pt@6fps/960px: counts {'horizontal': {'in': 0, 'out': 1}, 'vertical': {'in': 9, 'out': 1}} | err {'horizontal': {'in': 0, 'out': 0}, 'vertical': {'in': -7, 'out': -3}} | {'detection_precision': 0.826, 'detection_recall': 0.571, 'occupancy_MAE': 4.84, 'mean_people_visible': 14.9, 'occupancy_accuracy_%': 67.4, 'ms_per_frame': 131.5, 'frames_processed': 120}
+  yolo11n.pt@10fps/960px: counts {'horizontal': {'in': 1, 'out': 2}, 'vertical': {'in': 10, 'out': 1}} | err {'horizontal': {'in': 1, 'out': 1}, 'vertical': {'in': -6, 'out': -3}} | {'detection_precision': 0.809, 'detection_recall': 0.594, 'occupancy_MAE': 4.32, 'mean_people_visible': 14.9, 'occupancy_accuracy_%': 70.9, 'ms_per_frame': 121.5, 'frames_processed': 200}
+  yolo11s.pt@6fps/960px: counts {'horizontal': {'in': 1, 'out': 1}, 'vertical': {'in': 10, 'out': 1}} | err {'horizontal': {'in': 1, 'out': 0}, 'vertical': {'in': -6, 'out': -3}} | {'detection_precision': 0.771, 'detection_recall': 0.603, 'occupancy_MAE': 3.52, 'mean_people_visible': 14.9, 'occupancy_accuracy_%': 76.3, 'ms_per_frame': 287.9, 'frames_processed': 120}
+MOT17-04-FRCNN ground truth crossings: {'horizontal': {'in': 8, 'out': 8}, 'vertical': {'in': 4, 'out': 7}}
+  yolo11n.pt@6fps/640px: counts {'horizontal': {'in': 8, 'out': 4}, 'vertical': {'in': 2, 'out': 4}} | err {'horizontal': {'in': 0, 'out': -4}, 'vertical': {'in': -2, 'out': -3}} | {'detection_precision': 0.909, 'detection_recall': 0.384, 'occupancy_MAE': 19.98, 'mean_people_visible': 34.6, 'occupancy_accuracy_%': 42.2, 'ms_per_frame': 74.1, 'frames_processed': 210}
+  yolo11n.pt@6fps/960px: counts {'horizontal': {'in': 7, 'out': 5}, 'vertical': {'in': 2, 'out': 6}} | err {'horizontal': {'in': -1, 'out': -3}, 'vertical': {'in': -2, 'out': -1}} | {'detection_precision': 0.871, 'detection_recall': 0.58, 'occupancy_MAE': 11.56, 'mean_people_visible': 34.6, 'occupancy_accuracy_%': 66.6, 'ms_per_frame': 122.5, 'frames_processed': 210}
+  yolo11n.pt@10fps/960px: counts {'horizontal': {'in': 7, 'out': 5}, 'vertical': {'in': 2, 'out': 7}} | err {'horizontal': {'in': -1, 'out': -3}, 'vertical': {'in': -2, 'out': 0}} | {'detection_precision': 0.88, 'detection_recall': 0.597, 'occupancy_MAE': 11.09, 'mean_people_visible': 34.6, 'occupancy_accuracy_%': 67.9, 'ms_per_frame': 126.1, 'frames_processed': 350}
+  yolo11s.pt@6fps/960px: counts {'horizontal': {'in': 7, 'out': 5}, 'vertical': {'in': 2, 'out': 6}} | err {'horizontal': {'in': -1, 'out': -3}, 'vertical': {'in': -2, 'out': -1}} | {'detection_precision': 0.888, 'detection_recall': 0.554, 'occupancy_MAE': 12.98, 'mean_people_visible': 34.6, 'occupancy_accuracy_%': 62.5, 'ms_per_frame': 286.6, 'frames_processed': 210}
+MOT17-09-FRCNN ground truth crossings: {'horizontal': {'in': 0, 'out': 0}, 'vertical': {'in': 10, 'out': 1}}
+  yolo11n.pt@6fps/640px: counts {'horizontal': {'in': 1, 'out': 0}, 'vertical': {'in': 4, 'out': 3}} | err {'horizontal': {'in': 1, 'out': 0}, 'vertical': {'in': -6, 'out': 2}} | {'detection_precision': 0.751, 'detection_recall': 0.838, 'occupancy_MAE': 1.2, 'mean_people_visible': 6.9, 'occupancy_accuracy_%': 82.6, 'ms_per_frame': 74.3, 'frames_processed': 105}
+  yolo11n.pt@6fps/960px: counts {'horizontal': {'in': 1, 'out': 0}, 'vertical': {'in': 6, 'out': 3}} | err {'horizontal': {'in': 1, 'out': 0}, 'vertical': {'in': -4, 'out': 2}} | {'detection_precision': 0.705, 'detection_recall': 0.882, 'occupancy_MAE': 1.85, 'mean_people_visible': 6.9, 'occupancy_accuracy_%': 73.2, 'ms_per_frame': 121.0, 'frames_processed': 105}
+  yolo11n.pt@10fps/960px: counts {'horizontal': {'in': 0, 'out': 0}, 'vertical': {'in': 8, 'out': 3}} | err {'horizontal': {'in': 0, 'out': 0}, 'vertical': {'in': -2, 'out': 2}} | {'detection_precision': 0.71, 'detection_recall': 0.919, 'occupancy_MAE': 2.07, 'mean_people_visible': 6.9, 'occupancy_accuracy_%': 70.0, 'ms_per_frame': 122.0, 'frames_processed': 175}
+  yolo11s.pt@6fps/960px: counts {'horizontal': {'in': 1, 'out': 0}, 'vertical': {'in': 5, 'out': 3}} | err {'horizontal': {'in': 1, 'out': 0}, 'vertical': {'in': -5, 'out': 2}} | {'detection_precision': 0.656, 'detection_recall': 0.911, 'occupancy_MAE': 2.7, 'mean_people_visible': 6.9, 'occupancy_accuracy_%': 60.9, 'ms_per_frame': 312.9, 'frames_processed': 105}
+{
+  "yolo11n.pt@6fps/640px": {
+    "true_crossings": 59,
+    "visible_true_crossings": 46,
+    "absolute_count_error": 31,
+    "counting_accuracy_%": 47.5,
+    "event_precision": 0.778,
+    "event_recall_all": 0.475,
+    "event_recall_visible": 0.543
+  },
+  "yolo11n.pt@6fps/960px": {
+    "true_crossings": 59,
+    "visible_true_crossings": 46,
+    "absolute_count_error": 24,
+    "counting_accuracy_%": 59.3,
+    "event_precision": 0.756,
+    "event_recall_all": 0.525,
+    "event_recall_visible": 0.652
+  },
+  "yolo11n.pt@10fps/960px": {
+    "true_crossings": 59,
+    "visible_true_crossings": 46,
+    "absolute_count_error": 21,
+    "counting_accuracy_%": 64.4,
+    "event_precision": 0.783,
+    "event_recall_all": 0.61,
+    "event_recall_visible": 0.696
+  },
+  "yolo11s.pt@6fps/960px": {
+    "true_crossings": 59,
+    "visible_true_crossings": 46,
+    "absolute_count_error": 25,
+    "counting_accuracy_%": 57.6,
+    "event_precision": 0.786,
+    "event_recall_all": 0.559,
+    "event_recall_visible": 0.63
+  }
+}

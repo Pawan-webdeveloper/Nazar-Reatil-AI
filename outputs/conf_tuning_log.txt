@@ -1,0 +1,51 @@
+{
+ "validation": {
+  "0.2": {
+   "count_accuracy_%": 84.94,
+   "within_10pct_%": 50.5,
+   "sparse_acc_%": 40.5
+  },
+  "0.25": {
+   "count_accuracy_%": 88.48,
+   "within_10pct_%": 64.5,
+   "sparse_acc_%": 54.8
+  },
+  "0.3": {
+   "count_accuracy_%": 89.69,
+   "within_10pct_%": 71.1,
+   "sparse_acc_%": 62.9
+  },
+  "0.35": {
+   "count_accuracy_%": 89.52,
+   "within_10pct_%": 70.6,
+   "sparse_acc_%": 69.2
+  },
+  "0.4": {
+   "count_accuracy_%": 88.56,
+   "within_10pct_%": 67.0,
+   "sparse_acc_%": 72.8
+  },
+  "0.45": {
+   "count_accuracy_%": 87.12,
+   "within_10pct_%": 61.1,
+   "sparse_acc_%": 73.9
+  },
+  "0.5": {
+   "count_accuracy_%": 85.35,
+   "within_10pct_%": 53.2,
+   "sparse_acc_%": 74.3
+  }
+ },
+ "selected_conf": 0.3,
+ "test_at_selected": {
+  "count_accuracy_%": 89.04,
+  "within_10pct_%": 67.9,
+  "sparse_acc_%": 63.3
+ },
+ "test_at_0.25": {
+  "count_accuracy_%": 88.06,
+  "within_10pct_%": 64.8,
+  "sparse_acc_%": 55.2
+ },
+ "note": "local test = first test shard (420 images); Colab reported all 2935 test images at conf 0.25"
+}

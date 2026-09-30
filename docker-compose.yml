@@ -1,0 +1,24 @@
+# One store = one edge container. HQ = the same image in dashboard mode receiving syncs.
+services:
+  edge:
+    build: .
+    restart: unless-stopped
+    ports: ["8000:8000"]
+    volumes:
+      - ./configs:/app/configs:ro
+      - ./data:/app/data            # local SQLite survives restarts / power cuts
+      - ./samples:/app/samples:ro
+    environment:
+      RETAIL_API_KEY: ${RETAIL_API_KEY:-}
+      RETAIL_SYNC_KEY: ${RETAIL_SYNC_KEY:-}
+
+  hq:
+    build: .
+    profiles: ["hq"]
+    command: ["python", "run.py", "dashboard", "--host", "0.0.0.0", "--port", "9000"]
+    ports: ["9000:9000"]
+    volumes:
+      - ./configs:/app/configs:ro
+      - ./hq_data:/app/data
+    environment:
+      RETAIL_INGEST_KEY: ${RETAIL_SYNC_KEY:-}

@@ -1,0 +1,66 @@
+INFO:     Started server process [7692]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50272 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50276 - "GET /api/stores/STORE-BLR-001/inventory HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50278 - "GET /api/stores/STORE-BLR-001/zones HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50280 - "GET /api/stores/STORE-BLR-001/heatmap/cam_floor.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50282 - "POST /api/stores/STORE-BLR-001/inventory/baseline?key=cam_shelf_A/aisle_3_shelf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61952 - "GET /static/charts.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64243 - "GET /static/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64243 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64243 - "GET /api/stores HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64243 - "GET /api/stores/STORE-BLR-001/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64243 - "GET /api/stores/STORE-BLR-001/reports/daily HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64243 - "GET /api/stores/STORE-BLR-001/footfall_trend?days=28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64243 - "GET /api/stores/STORE-BLR-001/alerts?limit=500&unacked=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores/STORE-BLR-001/zones HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores/STORE-BLR-001/heatmaps HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores/STORE-BLR-001/heatmap/cam_floor.png?t=1790715204546 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores/STORE-BLR-001/inventory HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores/STORE-BLR-001/replenishment HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores/STORE-BLR-001/queue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores/STORE-BLR-001/alerts?limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores/STORE-BLR-001/reports/daily HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores/STORE-BLR-001/reports/weekly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/stores HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/cameras HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54894 - "GET /api/cameras/cam_entrance/preview.jpg?t=1790715213401 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59092 - "GET /api/cameras/cam_checkout/preview.jpg?t=1790715213401 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59197 - "GET /api/cameras/cam_shelf_A/preview.jpg?t=1790715213401 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54382 - "GET /api/cameras/cam_floor/preview.jpg?t=1790715213401 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54382 - "GET /api/stores HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54382 - "GET /api/stores/STORE-BLR-001/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54382 - "GET /api/stores/STORE-BLR-001/reports/daily HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54382 - "GET /api/stores/STORE-BLR-001/footfall_trend?days=28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64746 - "GET /api/stores/STORE-BLR-001/kpis?day=2026-09-29 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64746 - "GET /api/stores/STORE-BLR-001/reports/daily?day=2026-09-29 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64746 - "GET /api/stores/STORE-BLR-001/footfall_trend?days=28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64746 - "GET /api/stores/STORE-BLR-001/alerts?limit=500&unacked=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58689 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61953 - "GET /api/stores/STORE-BLR-001/kpis?day=2026-09-29 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61953 - "GET /api/stores/STORE-BLR-001/reports/daily?day=2026-09-29 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61953 - "GET /api/stores/STORE-BLR-001/footfall_trend?days=28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59484 - "GET /api/stores/STORE-BLR-001/kpis?day=2026-09-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59484 - "GET /api/stores/STORE-BLR-001/reports/daily?day=2026-09-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59484 - "GET /api/stores/STORE-BLR-001/footfall_trend?days=28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52841 - "GET /api/stores/STORE-BLR-001/alerts?limit=500&unacked=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52165 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52165 - "GET /api/stores/STORE-BLR-001/kpis?day=2026-09-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52165 - "GET /api/stores/STORE-BLR-001/reports/daily?day=2026-09-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52165 - "GET /api/stores/STORE-BLR-001/footfall_trend?days=28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50692 - "GET /api/stores/STORE-BLR-001/alerts?limit=500&unacked=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53555 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57756 - "GET /api/stores/STORE-BLR-001/kpis?day=2026-09-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57756 - "GET /api/stores/STORE-BLR-001/reports/daily?day=2026-09-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57756 - "GET /api/stores/STORE-BLR-001/footfall_trend?days=28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52482 - "GET /api/stores/STORE-BLR-001/alerts?limit=500&unacked=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62929 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50281 - "GET /api/stores/STORE-BLR-001/kpis?day=2026-09-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50281 - "GET /api/stores/STORE-BLR-001/reports/daily?day=2026-09-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50281 - "GET /api/stores/STORE-BLR-001/footfall_trend?days=28 HTTP/1.1" 200 OK
