@@ -130,13 +130,9 @@ PyTorch was faster than ONNX Runtime and OpenVINO FP32 on this CPU; exports are 
 
 ## Output previews
 
-<p align="center">
-  <img src="outputs/demo_videos/RetailSense_AI_SIH_PPT.pdf_52.jpg" alt="RetailSense dashboard overview" width="900" />
-</p>
+![RetailSense dashboard overview](outputs/demo_videos/RetailSense_AI_SIH_PPT.pdf_52.jpg)
 
-<p align="center">
-  <img src="outputs/demo_videos/RetailSense_AI_SIH_PPT.pdf_57.jpg" alt="RetailSense live camera dashboard" width="900" />
-</p>
+![RetailSense live camera dashboard](outputs/demo_videos/RetailSense_AI_SIH_PPT.pdf_57.jpg)
 
 ## Architecture
 
