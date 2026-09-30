@@ -12,6 +12,10 @@ hypermarkets, including Tier-2 / Tier-3 locations with unreliable internet.
 All numbers come from held-out data. Thresholds were tuned on validation splits only.
 Raw result files are in `outputs/`.
 
+### Output
+
+
+
 ### Shelf product detector (SKU-110K, trained on Colab T4)
 
 | Model (screening, identical budget, val) | mAP50 | mAP50-95 | GPU ms/img | Params |
@@ -123,6 +127,16 @@ PyTorch was faster than ONNX Runtime and OpenVINO FP32 on this CPU; exports are 
 | **Privacy** | No face recognition, no age / gender inference, rotating anonymous ids, pixelated previews, frames never stored, k-anonymity on reports |
 | **Dashboard** | Real-time alerts, KPIs (footfall, conversion, queue, shelf availability, bills per counter-hour), daily and weekly reports, live camera view |
 | **Scale-out** | Same software at HQ receives store-and-forward syncs from many stores; POS CSV / REST ingestion; ERP replenishment JSON |
+
+## Output previews
+
+<p align="center">
+  <img src="outputs/dashboard_overview.png" alt="RetailSense dashboard overview" width="900" />
+</p>
+
+<p align="center">
+  <img src="outputs/live_cameras.png" alt="RetailSense live camera dashboard" width="900" />
+</p>
 
 ## Architecture
 
